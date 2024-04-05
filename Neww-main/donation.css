@@ -1,0 +1,221 @@
+/* Donation */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+.donatebar {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 5000;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.logo2 {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+.logo2 h1 {
+  margin: 15px 100px;
+}
+.logo2 h1 span {
+  color: rgb(219, 73, 98);
+}
+.menu2 {
+  flex: 1;
+  text-align: right;
+  margin-top: 28px;
+  margin-right: 100px;
+}
+.menu2 ul li {
+  list-style: none;
+  display: inline-block;
+}
+.menu2 ul li a {
+  text-decoration: none;
+  color: white;
+  margin-left: 30px;
+  font-size: 15px;
+  transition: 0.5s;
+  font-weight: 500;
+  position: relative;
+}
+.menu2 ul li a:hover {
+  color: rgb(219, 73, 98);
+}
+.menu2 ul li a span {
+  color: #c3073f;
+}
+.menuicon2 {
+  margin: auto;
+  color: rgba(255, 255, 255, 0.5);
+  display: none;
+}
+.menuicon2 i span {
+  font-weight: 600;
+}
+@media only screen and (max-width: 700px) {
+  .nevbar {
+    background-color: black;
+  }
+  .logo a h1 {
+    margin: 15px 12px;
+  }
+  .menu2 {
+    text-align: right;
+    margin-right: 0px;
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    top: 49px;
+    max-height: 0px;
+    overflow: hidden;
+    box-shadow: 0px 10px 12px -1px rgb(0 0 0 / 10%);
+    transition: 0.5s;
+  }
+  .menu2 ul li {
+    list-style: none;
+    display: block;
+    margin: 25px 40px 35px auto;
+  }
+  .menu2 ul li a {
+    text-decoration: none;
+    color: white;
+    margin-left: 0px;
+    font-size: 15px;
+    transition: 0.5s;
+    font-size: 18px;
+  }
+  .menuicon2 {
+    display: block;
+    margin-right: 30px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+.cupo {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  z-index: -190;
+  color: white;
+}
+.cupo .mika {
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 5%;
+}
+.mika h3 {
+  font-size: 22px;
+  letter-spacing: 3px;
+  font-weight: 300;
+}
+.mika h3 span {
+  float: left;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.mika h2 {
+  font-size: 35px;
+}
+.mika p {
+  font-size: 20px;
+  line-height: 20px;
+  color: rgb(219, 73, 98);
+}
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  min-height: 100vh;
+  background: url("https://source.unsplash.com/1600x900/?money donation");
+}
+
+.container form {
+  padding: 20px;
+  width: 700px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container form .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.container form .row .col {
+  flex: 1 1 250px;
+}
+
+.container form .row .col .title {
+  font-size: 20px;
+  color: #333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.container form .row .col .inputBox {
+  margin: 15px 0;
+}
+
+.container form .row .col .inputBox span {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container form .row .col .inputBox input {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.container form .row .col .inputBox input:focus {
+  border: 1px solid #000;
+}
+
+.container form .row .col .flex {
+  display: flex;
+  gap: 15px;
+}
+
+.container form .row .col .flex .inputBox {
+  margin-top: 5px;
+}
+
+.container form .row .col .inputBox img {
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+.container form .submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 17px;
+  background: rgb(219, 73, 98);
+  color: #fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.container form .submit-btn:hover {
+  background: black;
+  color: white;
+}
+/* Donation End */

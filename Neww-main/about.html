@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us</title>
+    <link rel="stylesheet" href="about.css" />
+    <link rel="shortcut icon" href="FV.png" type="image/x-icon" />
+    <style>
+      * {
+          padding: 0;
+          margin: 0;
+          font-family: "Poppins", sans-serif;
+         }
+         
+         html {
+          scroll-behavior: smooth;
+         }
+         
+         /* Navigation bar */
+         .nevbar {
+          width: 100%;
+          position: fixed;
+          top: 0px;
+          z-index: 5000; /* Ensure navbar is on top */
+          display: flex;
+          background-color: rgba(0, 0, 0, 0.815);
+          height: 60px; /* Define a height for the navbar */
+          overflow-x: hidden;
+         }
+        
+        .logo a {
+          text-decoration: none;
+          color: white;
+          transition: 0.3s;
+        }
+        
+        .logo a h1 {
+          margin: 15px 100px;
+        }
+        
+        .logo a h1 span {
+          color: rgb(219, 73, 98);
+        }
+        
+        .menu {
+          flex: 1;
+          text-align: right;
+          margin-top: 28px;
+          margin-right: 100px;
+          overflow-x: hidden;
+        }
+        
+        .menu ul li {
+          list-style: none;
+          display: inline-block;
+        }
+        
+        .menu ul li a {
+          text-decoration: none;
+          color: white;
+          margin-left: 30px;
+          font-size: 15px;
+          transition: 0.5s;
+          font-weight: 500;
+          position: relative;
+        }
+        
+        .menu ul li a:hover {
+          color: rgb(219, 73, 98);
+        }
+        
+        .menu ul li a span {
+          color: #c3073f;
+        }
+        
+        .menuicon {
+          margin: auto;
+          color: rgba(255, 255, 255, 0.5);
+          display: none;
+        }
+        
+        .menuicon i span {
+          font-weight: 600;
+        }
+        
+        /* navbar mobile view */
+        @media only screen and (max-width: 700px) {
+          .nevbar {
+            background-color: black;
+          }
+          .logo a h1 {
+            margin: 15px 12px;
+          }
+          .menu {
+            text-align: right;
+            margin-right: 0px;
+            position: absolute;
+            background-color: black;
+            width: 100%;
+            top: 49px;
+            max-height: 0px;
+            overflow: hidden;
+            box-shadow: 0px 10px 12px -1px rgb(0 0 0 / 10%);
+            transition: 0.5s;
+          }
+        
+          .menu ul li {
+            list-style: none;
+            display: block;
+            margin: 25px 40px 35px auto;
+          }
+        
+          .menu ul li a {
+            text-decoration: none;
+            color: white;
+            margin-left: 0px;
+            font-size: 15px;
+            transition: 0.5s;
+            font-size: 18px;
+          }
+        
+          .menuicon {
+            display: block;
+            margin-right: 30px;
+            font-size: 20px;
+            cursor: pointer;
+          }
+        }
+        body {
+          padding-top: 60px; /* Adjust based on the height of your navbar */
+          overflow-x: hidden;
+         }
+        
+        .abouthead {
+          background-color: rgb(219, 73, 98);
+          color: #ffffff;
+          padding: 20px 0;
+          text-align: center;
+        }
+        .container {
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
+            url("https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+          /* url("https://source.unsplash.com/1600x900/?poorpeople"); */
+          z-index: -200;
+          color: rgb(253, 253, 253);
+        }
+        .content {
+          background-color: #00000072;
+          width: 100%;
+          height: 100%;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+          color: #ffffff;
+          font-size: 50px;
+        }
+        .content p {
+          margin-top: 10px;
+          line-height: 1.6;
+          font-size: 20px;
+        }
+        #maxu1, #maxu2, #maxu3, #maxu4, #maxu5 {
+          list-style-type: none; /* Removes default bullets */
+          padding: 10px 0; /* Adds vertical padding to each list item */
+          font-size: 20px; /* Sets the font size */
+          color: #ffffff; /* Sets the text color */
+          line-height: 1.6; /* Adjusts the line height for better readability */
+         }
+         
+         #maxu1:before, #maxu2:before, #maxu3:before, #maxu4:before, #maxu5:before {
+          content: "• "; /* Adds a custom bullet point */
+          color: #ffffff; /* Sets the color of the custom bullet point */
+         }
+         
+        </style>
+  </head>
+  <body>
+    <div class="nevbar" id="nevbar">
+      <div class="logo">
+        <a href="index.html" id="logo"
+          ><h1><span>Food</span> भोक</h1></a
+        >
+      </div>
+      <div class="menu" id="menu">
+        <ul>
+          <li><a id="home" href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="donate.html" target="_blank">Donate Here</a></li>
+        </ul>
+      </div>
+
+      <div class="menuicon">
+        <i
+          id="menuicon"
+          onclick="togglemenu()"
+          class="fas fa-chevron-circle-down"
+        >
+          <span>MENU</span></i
+        >
+      </div>
+    </div>
+    
+      <div class="abouthead"><h1>About Us </h1></div>
+
+
+     <div class="container">
+      <div class="content">
+        <h2>Who We Are</h2>
+        <p>
+          Foodभोक is an online platform aimed at addressing food insecurity and 
+          hunger through the facilitation of donations and support. It is designed 
+          to connect donors with individuals in need, allowing them to contribute 
+          funds that empower receivers to access essential food items with dignity 
+          and respect.
+        </p>
+
+        <h2>Our Mission</h2>
+        <p>
+          Here are our missions and we aim to do:
+<ul>
+<li>Eradicate hunger and ensure food security for all.</li>
+<li>Connect generous donors with individuals facing food insecurity.</li>
+<li>Allow individuals in need to access essential food items.</li>
+<li>Implement transparent and efficient processes throughout the platform.</li>
+<li>Make a meaningful impact on communities.</li>
+<li>Contribute towards Sustainable Development Goal 2: Zero Hunger.</li></ul>
+
+        </p>
+
+        <h2>Why Choose Us</h2>
+        <p>With Foodभोक, you can expect:</p>
+        <ul>
+            <li id="maxu1">Transparent donation process</li>
+            <li id="maxu2">Efficient fund allocation to those in need</li>
+            <li id="maxu3">Efficient and user-friendly platform for both donors and receivers</li>
+            <li id="maxu4">Responsive customer support</li>
+            <li id="maxu5">Convenient payment options</li>
+           </ul>
+           
+      </div>
+    </div>
+  </body>
+</html>

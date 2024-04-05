@@ -1,0 +1,349 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+/*****************************  nevigation bar ****************************/
+.nevbar {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 5000;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.logo a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.logo a h1 {
+  margin: 15px 100px;
+}
+
+.logo a h1 span {
+  color: rgb(219, 73, 98);
+}
+
+.menu {
+  flex: 1;
+  text-align: right;
+  margin-top: 28px;
+  margin-right: 100px;
+}
+
+.menu ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: white;
+  margin-left: 30px;
+  font-size: 15px;
+  transition: 0.5s;
+  font-weight: 500;
+  position: relative;
+}
+
+.menu ul li a:hover {
+  color: rgb(219, 73, 98);
+}
+
+.menu ul li a span {
+  color: #c3073f;
+}
+
+.menuicon {
+  margin: auto;
+  color: rgba(255, 255, 255, 0.5);
+  display: none;
+}
+
+.menuicon i span {
+  font-weight: 600;
+}
+
+/* navbar mobile view */
+@media only screen and (max-width: 700px) {
+  .nevbar {
+    background-color: black;
+  }
+  .logo a h1 {
+    margin: 15px 12px;
+  }
+  .menu {
+    text-align: right;
+    margin-right: 0px;
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    top: 49px;
+    max-height: 0px;
+    overflow: hidden;
+    box-shadow: 0px 10px 12px -1px rgb(0 0 0 / 10%);
+    transition: 0.5s;
+  }
+
+  .menu ul li {
+    list-style: none;
+    display: block;
+    margin: 25px 40px 35px auto;
+  }
+
+  .menu ul li a {
+    text-decoration: none;
+    color: white;
+    margin-left: 0px;
+    font-size: 15px;
+    transition: 0.5s;
+    font-size: 18px;
+  }
+
+  .menuicon {
+    display: block;
+    margin-right: 30px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+
+/**************  background cover image  ***************/
+.cover {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  /* url("https://source.unsplash.com/1600x900/?poorpeople"); */
+  z-index: -200;
+  color: white;
+}
+
+.cover .information {
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 10%;
+}
+
+.information h3 {
+  font-size: 18px;
+  letter-spacing: 3px;
+  font-weight: 300;
+}
+.information h3 span {
+  float: right;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.information h2 {
+  font-size: 40px;
+}
+
+.information h1 span {
+  font-size: 110px;
+  line-height: 120px;
+  color: rgb(219, 73, 98);
+  letter-spacing: 10px;
+}
+
+.information a {
+  display: block;
+  max-width: 350px;
+  margin: 0 auto;
+}
+.information a button {
+  padding: 8px 80px;
+  cursor: pointer;
+  letter-spacing: 5px;
+  background: linear-gradient(to right, transparent 50%, white 50%);
+  background-size: 200%;
+  background-position: left;
+  transition: 0.3s;
+  border: 2px solid white;
+  color: white;
+  margin: 40px 0 -50%;
+  width: 100%;
+}
+.information a button:hover {
+  background-position: right;
+  color: black;
+}
+
+@media only screen and (max-width: 700px) {
+  .cover .information {
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 30%;
+  }
+  .information h3 {
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: 300;
+  }
+  .information h3 span {
+    float: none;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .information h2 {
+    font-size: 30px;
+  }
+  .information h1 span {
+    font-size: 70px;
+    line-height: 120px;
+    color: rgb(219, 73, 98);
+    letter-spacing: 10px;
+  }
+}
+
+/****************************** FOOTER **************************/
+footer {
+  color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  box-sizing: border-box;
+  background-color: black;
+  text-align: center;
+  padding: 15px 0;
+}
+footer p {
+  font-size: 14px;
+}
+footer a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+}
+footer a:hover {
+  color: white;
+}
+footer a strong {
+  font-size: 16px;
+}
+
+/* mobile view of footer */
+@media only screen and (max-width: 700px) {
+  footer {
+    background-color: black;
+    left: 0%;
+    transform: translate(-0%);
+    padding: 15px 6%;
+  }
+}
+
+/* .signup-button */
+#loginModal {
+  display: none;
+  /* Other styles for the modal */
+}
+
+.signup-button {
+  display: inline-block;
+  background-color: #007bff00; /* Blue background color */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Padding around text */
+  font-size: 16px; /* Font size */
+  border: 2px solid  rgb(219, 73, 98);  /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor style on hover */
+  text-decoration: none; /* Remove default underline */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.signup-button:hover {
+  background-color: #1e1e1e91; /* Darker blue color on hover */
+  border-color: transparent;
+}
+/* Add this to your existing CSS file */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.453);
+  z-index: 1001; /* Ensure this is higher than other elements */
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.login-container, .signup-container {
+  width: 300px;
+  padding: 20px;
+  background-color: #000000;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+button {
+  padding: 10px;
+  margin-top: 20px;
+  background-color:  rgb(219, 73, 98);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(220, 36, 67);
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+
+
+
+
+ 

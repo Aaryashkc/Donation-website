@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="shortcut icon" href="FV.png" type="image/x-icon" />
+
+    <title>FOOD भोक</title>
+  </head>
+  <body>
+    <div class="nevbar" id="nevbar">
+      <div class="logo">
+        <a href="index.html" id="logo"
+          ><h1><span>Food</span> भोक</h1></a
+        >
+      </div>
+      <div class="menu" id="menu">
+        <ul>
+   
+        <li id="auth-buttons">
+          <a href="#" id="signupButton" class="signup-button">Sign Up</a>
+      </li>
+        </ul>
+        
+      </div>
+      <div class="menuicon">
+        <i
+          id="menuicon"
+          onclick="togglemenu()"
+          class="fas fa-chevron-circle-down"
+        >
+          <span>MENU</span></i
+        >
+      </div>
+    </div> 
+    
+    <div class="cover">
+      <div class="information">
+        <h1>.</h1>
+        <h3>Together, we can achieve so much more than we can alone</h3>
+        <h2>We FOOD भोक manage food for</h2>
+        <h1><span>NEEDY PEOPLE</span></h1>
+        <h3><span>FOOD भोक Foundation</span></h3>
+        <h1>.</h1>
+        <a href="explore.html"><button>EXPLORE</button></a>
+        <a href="donate.html"><button>DONATE</button></a>
+
+        <div id="signupModal" class="modal">
+          <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2 style="color: black;">Sign Up</h2>
+              <form>
+                  <label style="color: black;" for="name">Name:</label>
+                  <input style="color: black;" type="text" id="name" name="name">
+                  <label style="color: black;" for="email">Email:</label>
+                  <input style="color: black;" type="email" id="email" name="email">
+                  <label style="color: black;" for="password">Password:</label>
+                  <input style="color: black;" type="password" id="password" name="password">
+                  <button style=" font-size: medium; color: rgb(255, 255, 255);" type="submit">Submit</button>
+              </form>
+              <p style="color: black;" >Already have an account? <a href="#" id="openLogin">Login</a></p>
+              <!-- <p>Already have an account? <a href="#" data-toggle="modal" data-target="#loginModal" data-dismiss="modal">Login</a></p> -->
+        
+        
+          </div>
+        
+          <div id="loginModal" class="modal">
+            <div class="modal-content">
+                 <span class="close">&times;</span>
+                 <h2 style="color: black;" >Login</h2>
+                 <form id="formlog">
+                     <label style="color: black;" for="login-email">Email:</label>
+                     <input style="color: black;" type="email" id="login-email" name="login-email">
+                     <label style="color: black;" for="login-password">Password:</label>
+                     <input style="color: black;" type="password" id="login-password" name="login-password">
+                     <p style="color: black;">Forgot your password?<p style="color: rgb(0, 21, 255);" href="#" id="openSignup">Reset Password</p></p>
+                     <button style=" font-size: medium; color: rgb(255, 255, 255);" type="submit">Login</button>
+                 </form>
+                 <p style="color: black;">Don't have an account? <a href="#" id="openSignup">Sign Up</a></p>
+            </div>
+           </div>
+        
+          
+         
+        </div>
+        <script>
+          // Function to handle signup modal opening
+          function openSignupModal() {
+            document.getElementById('signupModal').style.display = 'block';
+          }
+          
+          // Function to handle signup modal closing
+          function closeSignupModal() {
+            document.getElementById('signupModal').style.display = 'none';
+          }
+          
+          // Function to handle login modal opening
+          function openLoginModal() {
+            document.getElementById('loginModal').style.display = 'block';
+          }
+          
+          // Function to handle login modal closing
+          function closeLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+          }
+          
+          // Function to change signup button to sign-out button after signup form submission
+          function changeSignupButton() {
+            var signupButton = document.getElementById('signupButton');
+            signupButton.innerText = 'Sign Out';
+            signupButton.removeEventListener('click', openSignupModal);
+            signupButton.addEventListener('click', signOut);
+          }
+          
+          // Function to change signout button to signup button after signout
+          function changeSignoutButton() {
+            var signupButton = document.getElementById('signupButton');
+            signupButton.innerText = 'Sign Up';
+            signupButton.removeEventListener('click', signOut);
+            signupButton.addEventListener('click', openSignupModal);
+          }
+          
+          // Function to handle sign-out action
+          function signOut() {
+            // Perform sign-out actions here
+            
+            // After sign-out, change the button back to sign-up
+            changeSignoutButton();
+          }
+          
+          // Event listener to open signup modal when signup button is clicked
+          document.getElementById('signupButton').addEventListener('click', openSignupModal);
+          
+          // Event listener to close signup modal when close button is clicked
+          document.getElementsByClassName('close')[0].addEventListener('click', closeSignupModal);
+          
+          // Event listener to close signup modal when clicking outside of it
+          window.onclick = function(event) {
+            if (event.target == document.getElementById('signupModal')) {
+              closeSignupModal();
+            }
+          }
+          
+          // Event listener to open login modal when login link is clicked
+          document.getElementById('openLogin').addEventListener('click', function() {
+            closeSignupModal();
+            openLoginModal();
+          });
+          
+          // Event listener to close login modal when close button is clicked
+          document.getElementsByClassName('close')[1].addEventListener('click', closeLoginModal);
+          
+          // Event listener to close login modal when clicking outside of it
+          window.onclick = function(event) {
+            if (event.target == document.getElementById('loginModal')) {
+              closeLoginModal();
+            }
+          }
+          
+          // Function to handle switching between sign-up and login modals
+          document.getElementById('openSignup').addEventListener('click', function() {
+            openSignupModal();
+            closeLoginModal();
+          });
+          
+          // Function to handle signup form submission
+          document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            // Handle signup form submission here
+            
+            // Change the button text and functionality to sign out
+            changeSignupButton();
+            alert('Submission successful!');
+          });
+          
+          </script>
+          
+  </body>
+</html>

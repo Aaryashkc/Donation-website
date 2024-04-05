@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="donation.css" />
+    <link rel="shortcut icon" href="DH.png" type="image/x-icon" />
+
+    <title>Donate Here</title>
+    <style>
+      .swal-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.swal-content {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.swal-confirm-button {
+    background-color: #3085d6;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+.swal-cancel-button {
+    background-color: #d33;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+.thank-you-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.thank-you-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.thank-you-details {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.thank-you-confirm-button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+.thank-you-details {
+    text-transform: none;
+}
+
+    </style>
+    <style>
+      .signup-button {
+       display: inline-block;
+       background-color: #007bff00; /* Blue background color */
+       color: #fff; /* White text color */
+       padding: 10px 20px; /* Padding around text */
+       font-size: 16px; /* Font size */
+       border: 2px solid  rgb(219, 73, 98);  /* No border */
+       border-radius: 5px; /* Rounded corners */
+       cursor: pointer; /* Cursor style on hover */
+       text-decoration: none; /* Remove default underline */
+       transition: background-color 0.3s ease; /* Smooth transition for background color */
+     }
+     
+     .signup-button:hover {
+       background-color: #1e1e1e4b; /* Darker blue color on hover */
+       border-color: transparent;
+     }</style>
+  </head>
+  <body>
+    <div class="donatebar" id="donatebar">
+      <div class="logo2">
+        <h1><span>For</span> Donation</h1>
+      </div>
+      <div class="menu2" id="menu2">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li id="auth-buttons">
+            <!-- Sign-up/Sign-in buttons will be dynamically added here -->
+            <a href="#" id="signupButton" class="signup-button" onclick="signOut()">Sign Out</a>
+          </li>
+        </ul>
+      </div>
+      <div class="menuicon2">
+        <i
+          id="menuicon"
+          onclick="togglemenu()"
+          class="fas fa-chevron-circle-down"
+        >
+          <span>MENU</span></i
+        >
+      </div>
+    </div>
+    <div class="cupo">
+      <div class="mika">
+        <br />
+        <h3>Extend Your</h3>
+        <h2><span>Support to our organization Program.</span></h2>
+        <h3>
+          ....Served more than 200 Thousand meals in Kathmandu since 2024....
+        </h3>
+        <br />
+        <br />
+        <p>
+          We are here to compassion meets action to alleviate hunger and foster
+          community solidarity. At our platform, we believe in the power of
+          generosity to transform lives and uplift communities. Through our
+          simple and intuitive interface, we connect donors with surplus food to
+          those in need, creating a seamless and impactful channel for food
+          redistribution. Whether you're a restaurant with excess inventory, a
+          grocery store with unsold produce, or an individual with a desire to
+          make a difference, our platform provides the means to channel your
+          generosity effectively. Together, we can combat food insecurity,
+          reduce food waste, and build a more resilient and compassionate
+          society. Join us in the fight against hunger, one donation at a time.
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <form method="POST" id="donationForm" action="connect.php" onsubmit="handleDonation();">
+    
+        <div class="row">
+          <div class="col">
+            <h3 class="title">Donor Details</h3>
+    
+            <div class="inputBox">
+              <span>Full name :</span>
+              <input name="name" type="text" placeholder="Your Name" required/>
+            </div>
+            <div class="inputBox">
+              <span>Email :</span>
+              <input type="email" placeholder="example@example.com" name="email" required/>
+            </div>
+            <div class="inputBox">
+              <span>Address :</span>
+              <input type="text" placeholder="Your Address" name="address" required/>
+            </div>
+            <div class="inputBox">
+              <span>City :</span>
+              <input type="text" placeholder="Kathmandu" name="city" required />
+            </div>
+    
+            <div class="flex">
+              <div class="inputBox">
+                <span>Province :</span>
+                <input type="text" placeholder="Province Name" name="province" required />
+              </div>
+              <div class="inputBox">
+                <span>Zip code :</span>
+                <input type="text" placeholder="12345" name="zipcode" required/>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col">
+            <h3 class="title">Online Donation</h3>
+    
+            <div class="inputBox">
+              <span>Donation Accepted through :</span>
+              <img src="images/Esewa.jpg" alt="Esewa QR Code" class="qr-code" data-qrcode="qrcodes/esewa.jpg" style="cursor: pointer;" >
+              <img src="images/Khalti.jpg" alt="Khalti QR Code" class="qr-code" data-qrcode="qrcodes/khalti.jpg" style="cursor: pointer;">
+              <img src="images/IME.jpg" alt="IME QR Code" class="qr-code" data-qrcode="qrcodes/IMEPAY.jpg" style="cursor: pointer;">
+              <img src="images/Bank.png" alt="Bank QR Code" class="qr-code" data-qrcode="qrcodes/bank.jpg" style="cursor: pointer;">
+            </div>
+    
+            <div class="inputBox">
+              <span>Donation month :</span>
+              <input type="text" placeholder="January" name="month" required/>
+            </div>
+    
+            <div class="flex">
+              <div class="inputBox">
+                <span>donation year :</span>
+                <input type="number" placeholder="2024" name="year" required/>
+              </div>
+              <div class="inputBox">
+                <span>Donation amount :</span>
+                <input type="text" name="amount" required/>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <input type="submit" value="proceed to checkout" class="submit-btn" />
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+      // Function to handle sign-out action with SweetAlert confirmation
+function signOut() {
+  // Display SweetAlert confirmation dialog
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You will be signed out",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, sign me out!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // If user confirms, perform sign-out actions
+      // Perform sign-out actions here
+      // After sign-out, change the button back to sign-up
+      changeSignoutButton();
+      Swal.fire(
+        'Signed Out!',
+        'You have been signed out.',
+        'success'
+      );
+    }
+  });
+}
+
+// Function to change signup button to sign-out button after signup form submission
+function changeSignupButton() {
+  var signupButton = document.getElementById('signupButton');
+  signupButton.innerText = 'Sign Up';
+  signupButton.removeEventListener('click', signOut);
+  signupButton.addEventListener('click', openSignupModal);
+}
+
+    </script>
+    
+    <script>
+      // drop down menu script
+      var menu = document.getElementById("menu");
+      menu.style.maxHeight = "0px";
+      function togglemenu() {
+        if (menu.style.maxHeight == "0px") {
+          menu.style.maxHeight = "390px";
+        } else {
+          menu.style.maxHeight = "0px";
+        }
+      }
+    </script>
+
+    <script>
+      // Function to display QR code popup
+    function showQRCodePopup(qrCodePath) {
+      Swal.fire({
+        title: 'Are you sure?',
+        text: 'Proceed to scan the QR code?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Yes',
+        cancelButtonText: 'No'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: 'Scan the QR code',
+            html: '<img src="' + qrCodePath + '" alt="QR Code" style="width: 300px;">',
+            confirmButtonText: 'OK',
+            showCancelButton: false
+          });
+        }
+      });
+    }
+
+    // Event listener for clicking on any QR code image
+    document.querySelectorAll('.qr-code').forEach(item => {
+      item.addEventListener('click', event => {
+        var qrCodePath = event.target.getAttribute('data-qrcode');
+        showQRCodePopup(qrCodePath);
+      });
+    });
+
+    </script>
+    
+    <!-- Include SweetAlert2 via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="javascripts/donation.js"></script>
+    
